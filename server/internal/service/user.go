@@ -161,10 +161,7 @@ func (svc *UserService) CreateStaff(user *requestparams.RegisterStaffParams) (st
 // registerUserToOpenIM register user to openim.
 func registerUserToOpenIM(param *request.RegisterUserParams) (bool, error) {
 	// Default not use tls/ssl
-	host := fmt.Sprintf(
-		"http://%s",
-		net.JoinHostPort(config.Config.OpenIM.Ip, fmt.Sprintf("%d", config.Config.OpenIM.ApiPort)),
-	)
+	host := fmt.Sprintf("http://%s", net.JoinHostPort(config.Config.OpenIM.Ip, fmt.Sprintf("%d", config.Config.OpenIM.ApiPort)))
 	resp, err := user.RegisterUser(param, host)
 	if err != nil {
 		return false, err
@@ -178,9 +175,7 @@ func registerUserToOpenIM(param *request.RegisterUserParams) (bool, error) {
 }
 
 // LoginWithAccount login with account.
-func (svc *UserService) LoginWithAccount(
-	param *requestparams.LoginParamsWithAccount,
-) (*responseparams.UserTokenResponse, error) {
+func (svc *UserService) LoginWithAccount(param *requestparams.LoginParamsWithAccount) (*responseparams.UserTokenResponse, error) {
 	resp := &responseparams.UserTokenResponse{}
 
 	// Check user
@@ -230,10 +225,7 @@ func (svc *UserService) LoginWithAccount(
 // getUserIMToken get user im token.
 func getUserIMToken(param *request.UserTokenParams) (*response.TokenData, error) {
 	// Default not use tls/ssl
-	host := fmt.Sprintf(
-		"http://%s",
-		net.JoinHostPort(config.Config.OpenIM.Ip, fmt.Sprintf("%d", config.Config.OpenIM.ApiPort)),
-	)
+	host := fmt.Sprintf("http://%s", net.JoinHostPort(config.Config.OpenIM.Ip, fmt.Sprintf("%d", config.Config.OpenIM.ApiPort)))
 	resp, err := auth.GetUserToken(param, host)
 	if err != nil {
 		return &response.TokenData{}, err

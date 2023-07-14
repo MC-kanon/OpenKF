@@ -65,11 +65,7 @@ func (svc *CommunityService) Create(community *requestparams.CommunityParams) (s
 }
 
 // GetCommunityInfoByUUID get community info by uuid.
-func (svc *CommunityService) GetCommunityInfoByUUID(
-	uid string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCommunity, int64, error) {
+func (svc *CommunityService) GetCommunityInfoByUUID(uid string, offset int, limit int) ([]*systemroles.SysCommunity, int64, error) {
 	_uuid := uuid.Must(uuid.FromString(uid))
 	c, count, err := svc.SysCommunityDao.FindByUUIDPage(_uuid, offset, limit)
 

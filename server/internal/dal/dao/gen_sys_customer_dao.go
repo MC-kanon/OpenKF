@@ -83,11 +83,7 @@ func (d *SysCustomerDao) FindFirstByUUID(uuid uuid.UUID) (*systemroles.SysCustom
 }
 
 // FindByUUIDPage get page by UUID.
-func (d *SysCustomerDao) FindByUUIDPage(
-	uuid uuid.UUID,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByUUIDPage(uuid uuid.UUID, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.UUID.Eq(uuid)).FindByPage(offset, limit)
@@ -103,11 +99,7 @@ func (d *SysCustomerDao) FindFirstByEmail(email string) (*systemroles.SysCustome
 }
 
 // FindByEmailPage get page by Email.
-func (d *SysCustomerDao) FindByEmailPage(
-	email string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByEmailPage(email string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Email.Eq(email)).FindByPage(offset, limit)
@@ -123,11 +115,7 @@ func (d *SysCustomerDao) FindFirstByNickname(nickname string) (*systemroles.SysC
 }
 
 // FindByNicknamePage get page by Nickname.
-func (d *SysCustomerDao) FindByNicknamePage(
-	nickname string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByNicknamePage(nickname string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Nickname.Eq(nickname)).FindByPage(offset, limit)
@@ -143,11 +131,7 @@ func (d *SysCustomerDao) FindFirstByAvatar(avatar string) (*systemroles.SysCusto
 }
 
 // FindByAvatarPage get page by Avatar.
-func (d *SysCustomerDao) FindByAvatarPage(
-	avatar string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByAvatarPage(avatar string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Avatar.Eq(avatar)).FindByPage(offset, limit)
@@ -163,11 +147,7 @@ func (d *SysCustomerDao) FindFirstByDevice(device string) (*systemroles.SysCusto
 }
 
 // FindByDevicePage get page by Device.
-func (d *SysCustomerDao) FindByDevicePage(
-	device string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByDevicePage(device string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Device.Eq(device)).FindByPage(offset, limit)
@@ -183,11 +163,7 @@ func (d *SysCustomerDao) FindFirstByIPAddress(ipaddress string) (*systemroles.Sy
 }
 
 // FindByIPAddressPage get page by IPAddress.
-func (d *SysCustomerDao) FindByIPAddressPage(
-	ipaddress string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindByIPAddressPage(ipaddress string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.IPAddress.Eq(ipaddress)).FindByPage(offset, limit)
@@ -203,11 +179,7 @@ func (d *SysCustomerDao) FindFirstBySource(source string) (*systemroles.SysCusto
 }
 
 // FindBySourcePage get page by Source.
-func (d *SysCustomerDao) FindBySourcePage(
-	source string,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindBySourcePage(source string, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Source.Eq(source)).FindByPage(offset, limit)
@@ -223,11 +195,7 @@ func (d *SysCustomerDao) FindFirstBySourceType(sourcetype int) (*systemroles.Sys
 }
 
 // FindBySourceTypePage get page by SourceType.
-func (d *SysCustomerDao) FindBySourceTypePage(
-	sourcetype int,
-	offset int,
-	limit int,
-) ([]*systemroles.SysCustomer, int64, error) {
+func (d *SysCustomerDao) FindBySourceTypePage(sourcetype int, offset int, limit int) ([]*systemroles.SysCustomer, int64, error) {
 	m := d.query.SysCustomer
 
 	result, count, err := m.WithContext(d.ctx).Where(m.SourceType.Eq(sourcetype)).FindByPage(offset, limit)
