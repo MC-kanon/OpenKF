@@ -161,7 +161,11 @@ func (d *SysBotDao) FindFirstByCommunityId(communityid uint) (*systemroles.SysBo
 }
 
 // FindByCommunityIdPage get page by CommunityId.
-func (d *SysBotDao) FindByCommunityIdPage(communityid uint, offset int, limit int) ([]*systemroles.SysBot, int64, error) {
+func (d *SysBotDao) FindByCommunityIdPage(
+	communityid uint,
+	offset int,
+	limit int,
+) ([]*systemroles.SysBot, int64, error) {
 	m := d.query.SysBot
 
 	result, count, err := m.WithContext(d.ctx).Where(m.CommunityId.Eq(communityid)).FindByPage(offset, limit)

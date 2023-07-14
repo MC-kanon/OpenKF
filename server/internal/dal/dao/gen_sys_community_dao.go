@@ -83,7 +83,11 @@ func (d *SysCommunityDao) FindFirstByUUID(uuid uuid.UUID) (*systemroles.SysCommu
 }
 
 // FindByUUIDPage get page by UUID.
-func (d *SysCommunityDao) FindByUUIDPage(uuid uuid.UUID, offset int, limit int) ([]*systemroles.SysCommunity, int64, error) {
+func (d *SysCommunityDao) FindByUUIDPage(
+	uuid uuid.UUID,
+	offset int,
+	limit int,
+) ([]*systemroles.SysCommunity, int64, error) {
 	m := d.query.SysCommunity
 
 	result, count, err := m.WithContext(d.ctx).Where(m.UUID.Eq(uuid)).FindByPage(offset, limit)
@@ -99,7 +103,11 @@ func (d *SysCommunityDao) FindFirstByName(name string) (*systemroles.SysCommunit
 }
 
 // FindByNamePage get page by Name.
-func (d *SysCommunityDao) FindByNamePage(name string, offset int, limit int) ([]*systemroles.SysCommunity, int64, error) {
+func (d *SysCommunityDao) FindByNamePage(
+	name string,
+	offset int,
+	limit int,
+) ([]*systemroles.SysCommunity, int64, error) {
 	m := d.query.SysCommunity
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Name.Eq(name)).FindByPage(offset, limit)
@@ -115,7 +123,11 @@ func (d *SysCommunityDao) FindFirstByEmail(email string) (*systemroles.SysCommun
 }
 
 // FindByEmailPage get page by Email.
-func (d *SysCommunityDao) FindByEmailPage(email string, offset int, limit int) ([]*systemroles.SysCommunity, int64, error) {
+func (d *SysCommunityDao) FindByEmailPage(
+	email string,
+	offset int,
+	limit int,
+) ([]*systemroles.SysCommunity, int64, error) {
 	m := d.query.SysCommunity
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Email.Eq(email)).FindByPage(offset, limit)
@@ -131,7 +143,11 @@ func (d *SysCommunityDao) FindFirstByAvatar(avatar string) (*systemroles.SysComm
 }
 
 // FindByAvatarPage get page by Avatar.
-func (d *SysCommunityDao) FindByAvatarPage(avatar string, offset int, limit int) ([]*systemroles.SysCommunity, int64, error) {
+func (d *SysCommunityDao) FindByAvatarPage(
+	avatar string,
+	offset int,
+	limit int,
+) ([]*systemroles.SysCommunity, int64, error) {
 	m := d.query.SysCommunity
 
 	result, count, err := m.WithContext(d.ctx).Where(m.Avatar.Eq(avatar)).FindByPage(offset, limit)
